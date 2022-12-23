@@ -49,7 +49,7 @@ class _HomeScreenState extends State<HomeScreen> {
             AboutSection(),
             SkillsScreen(),
             ProjectSection(),
-            ContactSection()
+            ContactSection(),
           ]
         ),
       ),

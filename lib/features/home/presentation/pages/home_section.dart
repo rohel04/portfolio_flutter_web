@@ -83,11 +83,11 @@ class _HomeSectionState extends State<HomeSection> {
                           child:child
                           );
                     },
-                        child: Image.asset(
-                          'assets/images/profile.png',
-                          height: 400.h,
-                          width: 400.w,
-                        ),
+                        // child: Image.asset(
+                        //   'assets/images/profile.png',
+                        //   height: 400.h,
+                        //   width: 400.w,
+                        // ),
                       ),
                     ),
                   )
