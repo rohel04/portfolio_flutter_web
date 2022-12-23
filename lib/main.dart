@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import 'features/home/presentation/pages/home_screen.dart';
 
 void main()=>runApp(const MyApp());
@@ -16,7 +15,7 @@ class MyApp extends StatelessWidget {
       builder:(context,child){
         return MaterialApp(
           debugShowCheckedModeBanner: false,
-          home: const HomeScreen(),
+          home:  const HomeScreen(),
           theme: ThemeData(
               fontFamily: 'Montserrat'
           ),

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_resume/features/home/presentation/widgets/about_section.dart';
+import 'package:flutter_resume/features/home/presentation/pages/about_section.dart';
 import 'package:flutter_resume/features/home/presentation/widgets/appbar_actions.dart';
-import 'package:flutter_resume/features/home/presentation/widgets/contact_section.dart';
-import 'package:flutter_resume/features/home/presentation/widgets/home_section.dart';
-import 'package:flutter_resume/features/home/presentation/widgets/project_section.dart';
-import 'package:flutter_resume/features/home/presentation/widgets/service_section.dart';
+import 'package:flutter_resume/features/home/presentation/pages/contact_section.dart';
+import 'package:flutter_resume/features/home/presentation/pages/home_section.dart';
+import 'package:flutter_resume/features/home/presentation/pages/project_section.dart';
+import 'package:flutter_resume/features/home/presentation/pages/skills_section.dart';
 import 'package:flutter_resume/utils/color_util.dart';
 import 'package:flutter_resume/utils/value_listener.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -20,7 +20,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   PageController pageController=PageController();
   int currentIndex=0;
-  List navItems=['Home','About','Service','Projects','Contact'];
+  List navItems=['Home','About','Skills','Projects','Contact'];
 
   @override
   Widget build(BuildContext context) {
@@ -36,6 +36,7 @@ class _HomeScreenState extends State<HomeScreen> {
       body: Container(
         color: ColorUtils.kHomeBlack,
         child: PageView(
+          pageSnapping: false,
           controller: pageController,
           scrollDirection: Axis.vertical,
           onPageChanged: (index){
@@ -46,7 +47,7 @@ class _HomeScreenState extends State<HomeScreen> {
           children:const [
             HomeSection(),
             AboutSection(),
-            ServiceSection(),
+            SkillsScreen(),
             ProjectSection(),
             ContactSection()
           ]
