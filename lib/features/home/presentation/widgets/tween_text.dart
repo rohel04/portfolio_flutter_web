@@ -7,8 +7,9 @@ class TweenText extends StatefulWidget {
 
   final String title;
   final int size;
+  final FontWeight fontWeight;
 
-  const TweenText({Key? key, required this.title, required this.size}) : super(key: key);
+  const TweenText({Key? key, required this.title, required this.size,  this.fontWeight=FontWeight.normal}) : super(key: key);
 
   @override
   State<TweenText> createState() => _TweenTextState();
@@ -20,7 +21,7 @@ class _TweenTextState extends State<TweenText> {
     return TweenAnimationBuilder(
       duration: const Duration(seconds: 3),
       tween: Tween<double>(begin: 0, end: 1),
-      child: Text(widget.title,style: TextStyle(fontSize: widget.size.sp,color: ColorUtils.kHomeTextWhite,fontWeight: FontWeight.bold)),
+      child: Text(widget.title,style: TextStyle(fontSize: widget.size.sp,color: ColorUtils.kHomeTextWhite,fontWeight: widget.fontWeight,height: 2),textAlign: TextAlign.justify,),
       builder: (context,value,child){
         return Opacity(opacity: value,child: child);
       },

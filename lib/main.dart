@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_resume/utils/color_util.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'features/home/presentation/pages/home_screen.dart';
 
@@ -17,7 +18,11 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           home:  const HomeScreen(),
           theme: ThemeData(
-              fontFamily: 'Montserrat'
+
+            textTheme: Theme.of(context).textTheme.apply(
+              bodyColor: ColorUtils.kHomeTextWhite,
+              fontFamily: 'Montserrat',
+            )
           ),
         );
       }

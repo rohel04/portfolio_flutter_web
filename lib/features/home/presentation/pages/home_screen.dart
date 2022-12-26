@@ -3,7 +3,7 @@ import 'package:flutter_resume/features/home/presentation/pages/about_section.da
 import 'package:flutter_resume/features/home/presentation/widgets/appbar_actions.dart';
 import 'package:flutter_resume/features/home/presentation/pages/contact_section.dart';
 import 'package:flutter_resume/features/home/presentation/pages/home_section.dart';
-import 'package:flutter_resume/features/home/presentation/pages/project_section.dart';
+import 'package:flutter_resume/features/home/presentation/pages/works_section.dart';
 import 'package:flutter_resume/features/home/presentation/pages/skills_section.dart';
 import 'package:flutter_resume/utils/color_util.dart';
 import 'package:flutter_resume/utils/value_listener.dart';
@@ -20,14 +20,14 @@ class _HomeScreenState extends State<HomeScreen> {
 
   PageController pageController=PageController();
   int currentIndex=0;
-  List navItems=['Home','About','Skills','Projects','Contact'];
+  List navItems=['Home','About','Skills','Works','Contact'];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: ColorUtils.kHomeBlack,
-        title: Text('My Resume',style: TextStyle(fontSize: 22.sp)),
+        title: const Text('My Resume',style: TextStyle(fontSize: 22)),
         elevation: 0.0,
         actions: List.generate(5, (index) => AppBarActionWidget(onTap: (){
           scrollToIndex(index);
