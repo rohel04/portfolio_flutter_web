@@ -11,6 +11,7 @@ class AppBarActionWidget extends StatefulWidget {
   final int index;
 
 
+
   AppBarActionWidget({Key? key,required this.onTap, required this.text,this.icon, required this.index}) : super(key: key);
 
   @override
@@ -23,7 +24,7 @@ class _AppBarActionWidgetState extends State<AppBarActionWidget> {
     return ValueListenableBuilder<int>(
       builder: (context,value,child){
         return Container(
-            padding:EdgeInsets.symmetric(horizontal: 5.w),
+            padding:EdgeInsets.symmetric(horizontal: 5.w,vertical: 1.h),
             child: ElevatedButton(
               onPressed: widget.onTap,
               style: ElevatedButton.styleFrom(
@@ -31,7 +32,7 @@ class _AppBarActionWidgetState extends State<AppBarActionWidget> {
                 elevation: 0.0,
 
               ),
-              child: Text(widget.text,style: TextStyle(fontWeight: value==widget.index?FontWeight.bold:FontWeight.normal,fontSize: 16.sp),),
+              child: Text(widget.text,style: TextStyle(fontWeight: value==widget.index?FontWeight.bold:FontWeight.w500,fontSize: 18),),
             )
         );
       },

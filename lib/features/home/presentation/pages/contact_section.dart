@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_resume/features/home/presentation/widgets/custom_textfield.dart';
-import 'package:flutter_resume/features/home/presentation/widgets/section_title.dart';
+import 'package:flutter_resume/features/home/presentation/widgets/tween_text.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../utils/color_util.dart';
@@ -34,26 +34,31 @@ class _ContactSectionState extends State<ContactSection> {
           mainAxisAlignment: MainAxisAlignment.center,
           
           children: [
-            const TweenText(title: 'Contact Me', size: 30),
+            const TweenText(title: 'Contact Me', size: 30,fontWeight: FontWeight.bold),
             const SizedBox(height: 30),
-            Form(
-                key: _formkey,
 
-                child:
-            Column(
-              children: [
-                CustomTextField(hintText: 'Full Name'),
-                CustomTextField(hintText: 'Email'),
-                CustomTextField(hintText: 'Phone'),
-                CustomTextField(hintText: 'Message',maxLine: 5),
-                ElevatedButton(onPressed: (){
-                  startAuthentication(context);
-                },style: ElevatedButton.styleFrom(
-                  minimumSize: Size(double.infinity, 50.h),
-                  backgroundColor: Colors.white10
-                ), child: const Text('Send Message'),),
-              ],
-            ))
+
+            Form(
+                    key: _formkey,
+
+
+                child: Column(
+                    children: [
+                      CustomTextField(hintText: 'Full Name'),
+                      CustomTextField(hintText: 'Email'),
+                      CustomTextField(hintText: 'Phone'),
+                      CustomTextField(hintText: 'Message',maxLine: 5),
+                      ElevatedButton(onPressed: (){
+                        startAuthentication(context);
+                      },style: ElevatedButton.styleFrom(
+                        minimumSize: Size(double.infinity, 50.h),
+                        backgroundColor: Colors.white10
+                      ), child: const Text('Send Message'),),
+                    ],
+                ),
+              ),
+
+
           ],
         ),
       ),
