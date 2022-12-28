@@ -18,7 +18,6 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           home:  const HomeScreen(),
           theme: ThemeData(
-
             textTheme: Theme.of(context).textTheme.apply(
               bodyColor: ColorUtils.kHomeTextWhite,
               fontFamily: 'Montserrat',

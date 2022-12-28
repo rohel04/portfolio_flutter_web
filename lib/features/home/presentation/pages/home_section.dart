@@ -17,6 +17,7 @@ class _HomeSectionState extends State<HomeSection> {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
+      physics: const NeverScrollableScrollPhysics(),
       child: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
@@ -26,10 +27,10 @@ class _HomeSectionState extends State<HomeSection> {
 
           )
         ),
-        padding:  EdgeInsets.symmetric(horizontal:30.w,vertical: 70.h),
+        padding:  EdgeInsets.symmetric(horizontal:30.w,vertical: 150.h),
             child: Column(children: [
               Container(
-                margin:  EdgeInsets.symmetric(horizontal: 30.w,vertical: 50.h),
+                margin:  EdgeInsets.symmetric(horizontal: 30.w,),
                 child: Row(
                   children: [
                     Expanded(
@@ -40,7 +41,7 @@ class _HomeSectionState extends State<HomeSection> {
                           Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children:  [
-                                 const TweenText(title: 'WELCOME TO MY PORTFOLIO', size: 26),
+                                 const TweenText(title: 'WELCOME TO MY PORTFOLIO', size: 26,height: 1),
                                 SizedBox(width: 2.w),
                                  Icon(
                                   Icons.waving_hand,
@@ -48,15 +49,15 @@ class _HomeSectionState extends State<HomeSection> {
                                   color: Colors.yellowAccent,
                                 )
                               ]),
-                          SizedBox(height: 15.h),
-                          const TweenText(title: 'Rohel Shakya', size: 48,fontWeight: FontWeight.bold,),
-                          SizedBox(height: 15.h),
+                          SizedBox(height: 40.h),
+                          const TweenText(title: 'Rohel Shakya', size: 48,fontWeight: FontWeight.bold,height: 1),
+                          SizedBox(height: 40.h),
                           Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children:   const [
                                 Icon(Icons.play_arrow_rounded,
                                     color: Colors.redAccent),
-                                TweenText(title: 'Flutter Developer', size: 24)
+                                TweenText(title: 'Flutter Developer', size: 24,height: 1)
                               ]),
                            SizedBox(height: 100.h),
                            const TweenText(title: 'Connect via :', size:12),

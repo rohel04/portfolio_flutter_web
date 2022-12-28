@@ -19,7 +19,6 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
 
   PageController pageController=PageController();
-  int currentIndex=0;
   List navItems=['Home','About','Skills','Experiences','Contact'];
 
   @override

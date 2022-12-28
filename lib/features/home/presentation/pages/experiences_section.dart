@@ -28,6 +28,8 @@ class _WorksSectionState extends State<WorksSection> {
           child: Timeline.tileBuilder(
             physics: const BouncingScrollPhysics(),
               builder: TimelineTileBuilder.fromStyle(
+                connectorStyle: ConnectorStyle.dashedLine,
+                indicatorStyle: IndicatorStyle.outlined,
                   itemCount: 2,
                   contentsAlign: ContentsAlign.alternating,
                   contentsBuilder: (context, index) =>
