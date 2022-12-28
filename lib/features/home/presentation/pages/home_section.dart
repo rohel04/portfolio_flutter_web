@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_resume/features/home/presentation/widgets/social_media.dart';
+import 'package:flutter_resume/features/home/presentation/widgets/tween_text.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../utils/color_util.dart';
@@ -16,12 +17,20 @@ class _HomeSectionState extends State<HomeSection> {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
+      physics: const NeverScrollableScrollPhysics(),
       child: Container(
-        padding:  EdgeInsets.symmetric(vertical: 60.h),
-          color: ColorUtils.kHomeBlack,
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/images/banner-b&w.jpg'),
+            fit: BoxFit.cover,
+            colorFilter: ColorFilter.mode(Colors.black87, BlendMode.darken)
+
+          )
+        ),
+        padding:  EdgeInsets.symmetric(horizontal:30.w,vertical: 150.h),
             child: Column(children: [
               Container(
-                margin:  EdgeInsets.symmetric(horizontal: 30.w,vertical: 50.h),
+                margin:  EdgeInsets.symmetric(horizontal: 30.w,),
                 child: Row(
                   children: [
                     Expanded(
@@ -32,51 +41,35 @@ class _HomeSectionState extends State<HomeSection> {
                           Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children:  [
-                                 Text('WELCOME TO MY PORTFOLIO',
-                                    style: TextStyle(
-                                        fontSize: 26.h,
-                                        color: ColorUtils.kHomeTextWhite,
-                                        fontFamily: 'Montserrat')),
+                                 const TweenText(title: 'WELCOME TO MY PORTFOLIO', size: 26,height: 1),
                                 SizedBox(width: 2.w),
                                  Icon(
                                   Icons.waving_hand,
-                                  size: 5.w,
+                                  size: 20.w,
                                   color: Colors.yellowAccent,
                                 )
                               ]),
-                          SizedBox(height: 20.h),
-                          Text(
-                            'Rohel Shakya',
-                            style: TextStyle(
-                                fontSize: 48.h, color: ColorUtils.kHomeTextWhite,fontWeight: FontWeight.bold),
-                          ),
-                          const SizedBox(height: 20),
+                          SizedBox(height: 40.h),
+                          const TweenText(title: 'Rohel Shakya', size: 48,fontWeight: FontWeight.bold,height: 1),
+                          SizedBox(height: 40.h),
                           Row(
                               mainAxisAlignment: MainAxisAlignment.center,
-                              children:   [
-                                const Icon(Icons.play_arrow_rounded,
+                              children:   const [
+                                Icon(Icons.play_arrow_rounded,
                                     color: Colors.redAccent),
-                                Text(
-                                  'Flutter Developer',
-                                  style: TextStyle(
-                                      fontSize: 24.h,
-                                      color: ColorUtils.kHomeTextWhite),
-                                )
+                                TweenText(title: 'Flutter Developer', size: 24,height: 1)
                               ]),
-                           SizedBox(height: 150.h),
-                           Text(
-                            'Connect via:',
-                            style: TextStyle(color: ColorUtils.kHomeTextWhite,fontSize: 12.sp),
-                          ),
+                           SizedBox(height: 100.h),
+                           const TweenText(title: 'Connect via :', size:12),
                           SizedBox(height: 30.h),
                           const SocialMediaWidget()
                         ],
                       ),
                     ),
-                    Expanded(
-                      flex: 2,
-                      child: TweenImage.tweenImage('assets/images/canva_one.jpg',400,400)
-                    )
+                    // Expanded(
+                    //   flex: 1,
+                    //   child: TweenImage.tweenImage('assets/images/prof.png',500,500)
+                    // )
                   ],
                 ),
               ),

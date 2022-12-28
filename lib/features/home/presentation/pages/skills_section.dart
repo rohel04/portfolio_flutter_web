@@ -20,19 +20,19 @@ class _SkillsScreenState extends State<SkillsScreen> {
     // TODO: implement initState
     super.initState();
     data=[
-      _ChartData(x: 'Meeting deadlines', y: 90),
-      _ChartData(x: 'Communication', y: 90),
+      _ChartData(x: 'Meeting deadlines', y: 80),
+      _ChartData(x: 'Communication', y: 70),
       _ChartData(x: 'Django', y: 60),
       _ChartData(x: 'Python', y: 50),
-      _ChartData(x: 'Flutter', y: 80),
-      _ChartData(x: 'Dart', y: 80),
+      _ChartData(x: 'Flutter', y: 60),
+      _ChartData(x: 'Dart', y: 70),
     ];
   }
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 60.w,vertical: 100.h),
+      padding: EdgeInsets.symmetric(horizontal: 350.w,vertical: 150.h),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
 
@@ -43,9 +43,9 @@ class _SkillsScreenState extends State<SkillsScreen> {
             child: SfCartesianChart(
               plotAreaBorderWidth: 0,
               backgroundColor: Colors.black45,
-                primaryXAxis: CategoryAxis(majorGridLines: const MajorGridLines(width: 0),labelStyle: const TextStyle(fontSize: 16),borderWidth: 0,axisLine: AxisLine(width: 0)
+                primaryXAxis: CategoryAxis(majorGridLines: const MajorGridLines(width: 0), labelIntersectAction: AxisLabelIntersectAction.hide, labelPosition: ChartDataLabelPosition.inside, labelStyle: const TextStyle(fontSize: 16,color: Colors.white38),borderWidth: 0,axisLine: const AxisLine(width: 0),
                 ),
-                primaryYAxis: NumericAxis(minimum: 0, maximum: 100,isVisible:false,majorGridLines: const MajorGridLines(width: 0)),
+                primaryYAxis: NumericAxis(minimum: 1, maximum: 100,isVisible:false,majorGridLines: const MajorGridLines(width: 0)),
                 series: <ChartSeries<_ChartData, String>>[
                   BarSeries<_ChartData, String>(
                       dataSource: data,

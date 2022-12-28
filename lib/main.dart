@@ -11,14 +11,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  ScreenUtilInit(
-      designSize:const Size(360,690),
+      designSize:const Size(1280,720),
       minTextAdapt: true,
       builder:(context,child){
         return MaterialApp(
           debugShowCheckedModeBanner: false,
           home:  const HomeScreen(),
           theme: ThemeData(
-
             textTheme: Theme.of(context).textTheme.apply(
               bodyColor: ColorUtils.kHomeTextWhite,
               fontFamily: 'Montserrat',

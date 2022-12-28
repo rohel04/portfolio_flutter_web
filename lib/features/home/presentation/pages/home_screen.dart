@@ -3,7 +3,7 @@ import 'package:flutter_resume/features/home/presentation/pages/about_section.da
 import 'package:flutter_resume/features/home/presentation/widgets/appbar_actions.dart';
 import 'package:flutter_resume/features/home/presentation/pages/contact_section.dart';
 import 'package:flutter_resume/features/home/presentation/pages/home_section.dart';
-import 'package:flutter_resume/features/home/presentation/pages/works_section.dart';
+import 'package:flutter_resume/features/home/presentation/pages/experiences_section.dart';
 import 'package:flutter_resume/features/home/presentation/pages/skills_section.dart';
 import 'package:flutter_resume/utils/color_util.dart';
 import 'package:flutter_resume/utils/value_listener.dart';
@@ -19,8 +19,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
 
   PageController pageController=PageController();
-  int currentIndex=0;
-  List navItems=['Home','About','Skills','Works','Contact'];
+  List navItems=['Home','About','Skills','Experiences','Contact'];
 
   @override
   Widget build(BuildContext context) {
@@ -40,15 +39,13 @@ class _HomeScreenState extends State<HomeScreen> {
           controller: pageController,
           scrollDirection: Axis.vertical,
           onPageChanged: (index){
-            setState(() {
-              ValueListener.currentIndex=ValueNotifier(index);
-            });
+              ValueListener.currentIndex.value=index;
           },
           children:const [
             HomeSection(),
             AboutSection(),
             SkillsScreen(),
-            ProjectSection(),
+            WorksSection(),
             ContactSection(),
           ]
         ),
@@ -58,7 +55,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
   }
   void scrollToIndex(int index){
-
     pageController.animateToPage(index, duration: const Duration(seconds: 2), curve: Curves.fastLinearToSlowEaseIn);
   }
 }

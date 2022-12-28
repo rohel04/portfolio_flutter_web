@@ -16,33 +16,24 @@ class _AboutSectionState extends State<AboutSection> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 30.w,vertical: 10.h),
+      padding: EdgeInsets.symmetric(horizontal: 100.w,vertical: 30.h),
         color: Colors.white10,
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget> [
                const TweenText(title: 'About Me',size: 30,fontWeight: FontWeight.bold,),
                 SizedBox(height: 30.h),
-                Expanded(
-                  child: Row(
+                    // flex: 3,
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children:[
+                        TweenText(title: aboutFirst, size: 16),
+                        SizedBox(height: 10.h),
+                        TweenText(title: aboutSecond, size: 16)
+                      ]
 
-                    children: [
-                      Expanded(
-                        flex:1,
-                        child:TweenImage.tweenImage('assets/images/about.jpg', 300, 300),),
-                      Expanded(
-                        flex: 3,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children:[
-                            TweenText(title: aboutFirst, size: 16),
-                            SizedBox(height: 10.h),
-                            TweenText(title: aboutSecond, size: 16)
-                          ]
-                        ),
-                      )
-                  ],
                   ),
-                ),
+
               ],
           ),
 
