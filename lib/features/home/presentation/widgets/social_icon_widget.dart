@@ -17,16 +17,19 @@ class SocialIconWidget extends StatefulWidget {
 class _SocialIconWidgetState extends State<SocialIconWidget> {
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: widget.onTap,
-      child: Column(children: [
-        Image.asset('assets/icons/${widget.imageTag}',
-            height: 30.h, width: 30.w, color: Colors.white),
-        Text(
-          widget.iconTitle,
-          style: const TextStyle(color: ColorUtils.kHomeTextWhite),
-        )
-      ]),
+    return Container(
+      margin: EdgeInsets.symmetric(vertical: 10.h,horizontal: 15.w),
+      child: InkWell(
+        onTap: widget.onTap,
+        child: Column(children: [
+          Image.asset('assets/icons/${widget.imageTag}',
+              height: 30.h, width: 30.w, color: Colors.white),
+          Text(
+            widget.iconTitle,
+            style: const TextStyle(color: ColorUtils.kHomeTextWhite),
+          )
+        ]),
+      ),
     );
   }
 }

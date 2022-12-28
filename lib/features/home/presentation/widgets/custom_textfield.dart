@@ -24,10 +24,13 @@ class _CustomTextFieldState extends State<CustomTextField> {
           if(value!.isEmpty){
             return 'Field is empty';
           }
+          return null;
         },
         maxLines: widget.maxLine,
         decoration:  InputDecoration(
             hintText: widget.hintText,
+            filled: true,
+            fillColor: const Color(0xFF252525),
             hintStyle: const TextStyle(color: ColorUtils.kHomeTextWhite),
             enabledBorder: const OutlineInputBorder(
                 borderSide: BorderSide(

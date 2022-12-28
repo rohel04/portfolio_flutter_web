@@ -16,7 +16,7 @@ class _AboutSectionState extends State<AboutSection> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 30.w,vertical: 10.h),
+      padding: EdgeInsets.symmetric(horizontal: 100.w,vertical: 30.h),
         color: Colors.white10,
               child: Column(
               children: <Widget> [
